@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+ <html>
+ 	<head>
+ 		<meta charset="utf-8">
+         <title>Zahlen raten</title>
+         <style>
+         h2 {
+             /*
+             font-family:'Arial Black';
+             color: blue;
+             font-size: 4em;
+             background: yellow;
+             line-height: 150px;
+             margin: 0px 0px 0px 0px;
+             padding-left: 20px;
+             */
+
+
+             font-family:'serif';
+             color:red;
+             background:#ffff2b;
+             font-size: 4em;
+             line-height: 100px;
+             margin: 0px 0px 0px 0px;
+            }
+            .Anfangsbuchstabe{
+            color:#8f0000;
+            }
+            .Anleitung{
+                background:#7cff7c;
+            }
+            .ZahlenInAnleitung{
+                color:red;
+            }
+         </style>
+ 	</head>
+ 	<body>
+ 		<h2><span class='Anfangsbuchstabe'>Z</span>ahlen <span class='Anfangsbuchstabe'>R</span>aten</h2>
+    		
+ 		<p><span class='Anleitung'>Versuche, die Zahl zwischen <span class='ZahlenInAnleitung'>0</span> und <span class='ZahlenInAnleitung'>100</span> zu erraten!</span></p>
+    		
+ 		<div style="height: 120px">
+ 			<label>Dein Tipp:</label>
+ 			<input type="number" id="inputGuess" style="width:100px"/>
+             <button onclick="checkNumber()">Überprüfen</button>
+             
+             <button onclick="newgame()">Neu starten</button>
+    			
+ 			<p id="outputResult"></p>
+ 			<p id="outputCount"></p>
+ 		</div>
+ 	</body>
+    	
+ 	<script type="text/javascript">
+ 		var inputGuess = document.getElementById("inputGuess");
+ 		var outputResult = document.getElementById("outputResult");
+ 		var outputCount = document.getElementById("outputCount");
+    		
+ 		var number, count;
+ 		number = Math.floor(Math.random() * 100);
+        
+        count=0;
+        function checkNumber() {
+            var guess = parseInt(inputGuess.value);
+
+            if(guess<number)
+            outputResult.innerHTML = "Dein Tipp war zu niedrig!";
+            else if(guess>number)
+            outputResult.innerHTML = "Dein Tipp war zu hoch!";
+            else if(guess==number)
+            outputResult.innerHTML ="Richtig!";
+
+            count=count+1;
+            if(count==1)
+            outputCount.innerHTML = "Du hast bisher einen Versuch gebaucht.";
+            else if(count >= 1)
+            outputCount.innerHTML = "Du hast bisher " + count + " Versuche gebraucht.";
+        }
+
+        function newgame() {
+        number = Math.floor(Math.random() * 100);
+        count=0;
+        inputGuess.value = "";
+        outputResult.innerHTML = "";
+        outputCount.innerHTML = "";
+        }
+
+
+
+ 	</script>
+ </html>
