@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rechen Spiel</title>
+        
+        <style>
+            h2 {
+             font-family:'serif';
+             color:red;
+             background:#ffff2b;
+             font-size: 4em;
+             line-height: 100px;
+             margin: 0px 0px 0px 0px;
+            }
+            .Anfangsbuchstabe{
+            color:#8f0000;
+            }
+            .Anleitung{
+                background:#7cff7c;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <h2><span class='Anfangsbuchstabe'>R</span>echen <span class='Anfangsbuchstabe'>S</span>piel</h2>
+        <p><span class='Anleitung'>Versuche die Rechung so schnell wie möglich zu lösen!</span></p>
+        <p id="Rechnung"></p>
+        <label>Deine Antwort:</label>
+        <input type="number" id="answer" style="width:100px"/>
+        <button onclick="checkNumber()">Überprüfen</button>
+        <button onclick="nextCalculation()">Nächste Rechnung</button>
+        <p id="RichtigOderFalsch"></p>
+    </body>
+
+    <script type="text/javascript">
+        var number1 = Math.floor(Math.random() * 100);
+        var number2 = Math.floor(Math.random() * 100);
+        var result = number1 + number2;
+
+        Rechnung.innerHTML = number1 + "+" + number2;
+
+        function checkNumber() {
+            var guess = parseInt(answer.value);
+
+            if(guess == result)
+            RichtigOderFalsch.innerHTML = "Richtig!"
+            else
+            RichtigOderFalsch.innerHTML = "Falsch! Die Lösung wäre " + result + "!"
+        }
+        function nextCalculation() {
+            number1 = Math.floor(Math.random() * 100);
+            number2 = Math.floor(Math.random() * 100);
+            result = number1 + number2;
+            answer.value = "";
+            Rechnung.innerHTML = number1 + "+" + number2;
+            RichtigOderFalsch.innerHTML = "";
+        }
+    </script>
+</html>
