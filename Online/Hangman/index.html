@@ -25,6 +25,7 @@
 			<div>Tippe einen Buchstaben ein.</div>
 			<div id="divInput" style="display:none">
 				<input id="mobileInput" style="width:100px"/>
+				<button onclick="mobilePruefen()">Überprüfen</button>
 			</div>
 			<div id="wort"></div>
 			<div id="info"></div>
@@ -63,11 +64,15 @@ window.focus();
 			}
 		};
 } else if(check == true) {
-	document.getElementById('divInput').style.display = "block";
-	var mobileGuess = document.getElementById("mobileInput");
- 	buchstabePruefen(mobileGuess);
-    document.getElementById("mobileInput").innerText = "";
+	document.getElementById('divInput').style.display = "block";    
 }
+
+function mobilePruefen() {
+	var mobileGuess = document.getElementById("mobileInput");
+	buchstabePruefen(mobileGuess);
+	document.getElementById("mobileInput").innerText = "";
+}
+
 
 // zeige das Wort mit * für noch nicht erratene Buchstaben an
 function wortAnzeigen() {
