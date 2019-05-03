@@ -64,7 +64,9 @@ window.focus();
 		};
 } else if(check == true) {
 	document.getElementById('divInput').style.display = "block";
-//	buchstabePruefen(buchstabe);
+	var mobileGuess = document.getElementById("mobileInput");
+ 	buchstabePruefen(mobileGuess);
+    document.getElementById("mobileInput").innerText = "";
 }
 
 // zeige das Wort mit * für noch nicht erratene Buchstaben an
