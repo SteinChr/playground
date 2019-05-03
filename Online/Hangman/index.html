@@ -29,6 +29,7 @@
 			</div>
 			<div id="wort"></div>
 			<div id="info"></div>
+			<div id="gerateneZeichen"></div>
 		</div>
 
 		<div class="hangmanBereich">
@@ -71,6 +72,7 @@ function mobilePruefen() {
 	var mobileGuess = document.getElementById("mobileInput").innerText;
 	buchstabePruefen(mobileGuess);
 	document.getElementById("mobileInput").innerText = "";
+	document.getElementById("gerateneZeichen").innerText = gerateneBuchstaben;
 }
 
 
