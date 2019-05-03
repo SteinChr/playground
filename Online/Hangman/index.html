@@ -68,7 +68,7 @@ window.focus();
 }
 
 function mobilePruefen() {
-	var mobileGuess = document.getElementById("mobileInput");
+	var mobileGuess = document.getElementById("mobileInput").innerText;
 	buchstabePruefen(mobileGuess);
 	document.getElementById("mobileInput").innerText = "";
 }
