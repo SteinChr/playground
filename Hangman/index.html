@@ -69,12 +69,10 @@ window.focus();
 }
 
 function mobilePruefen() {
-	if(!gameFinished) {
-		var mobileGuess = document.getElementById("mobileInput").value;
-		buchstabePruefen(mobileGuess);
-		document.getElementById("mobileInput").value = "";
-		//document.getElementById("gerateneZeichen").innerText = gerateneBuchstaben;
-	}
+	var mobileGuess = document.getElementById("mobileInput").value;
+	buchstabePruefen(mobileGuess);
+	document.getElementById("mobileInput").value = "";
+	//document.getElementById("gerateneZeichen").innerText = gerateneBuchstaben;
 }
 
 
