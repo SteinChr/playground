@@ -69,7 +69,8 @@ window.focus();
 }
 
 function mobilePruefen() {
-	var mobileGuess = document.getElementById("mobileInput").value.toLowerCase;
+	var mobileGuess = document.getElementById("mobileInput").value;
+	mobileGuess = ss.toLowerCase();
 	buchstabePruefen(mobileGuess);
 	document.getElementById("mobileInput").value = "";
 	//document.getElementById("gerateneZeichen").innerText = gerateneBuchstaben;
